@@ -12,9 +12,12 @@ const Home = () => {
         <div className="description">
           <h1>Welcome to Our Website!</h1>
           <p>
-            This is a short description of what our website is about. We provide various services that
-            help you achieve your goals. Our platform is user-friendly and offers a range of exciting
-            features. Explore more and discover all the amazing things we have to offer.
+           Checkmate is an advanced plagiarism detection tool designed to help you ensure originality and integrity
+           in your written content. Using cutting-edge algorithms and web scraping techniques, Checkmate quickly 
+           scans your text against billions of online sources to identify copied or uncredited material.
+           Whether you're a student, researcher, or content creator, Checkmate provides accurate reports 
+           with detailed similarity scores. Trust Checkmate to safeguard your work from unintentional 
+           plagiarism and maintain high-quality standards.
           </p>
         </div>
 

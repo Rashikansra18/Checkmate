@@ -25,10 +25,10 @@
 /* Left side (description) */
 .description {
     flex: 1;
-    padding: 20px;
-    max-width: 600px;
+    padding: 10px;
+    max-width: 800px;
     position: absolute; /* Positioning the description absolutely */
-    bottom: 70px; /* Align to the bottom */
+    bottom: 10px; /* Align to the bottom */
     left: 10px; /* Align to the left */
 }
 
@@ -48,6 +48,8 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    bottom: 150px;
+    left: 100px;
     position: relative; /* Positioning the image container relatively */
 }
 
