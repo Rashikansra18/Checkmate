@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles/PlagiarismChecker.css'; // Import the CSS file
 import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./Login";
+// import Login from "./Login";
 // import PlagiarismChecker from "./PlagiarismChecker"; // Import your component
 
 
