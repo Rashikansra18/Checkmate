@@ -1,0 +1,117 @@
+/* General page styling */
+.home-page {
+    font-family: Arial, sans-serif;
+    margin-top: 50px; /* Space for navbar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Content container */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+    max-width: 1200px; /* Optional: limits the width of the content */
+    margin-top: 190px;
+    margin-left: 100px; /* Accounts for navbar height */
+    position: relative; /* Added for absolute positioning of description */
+}
+
+/* Left side (description) */
+.description {
+    flex: 1;
+    padding: 20px;
+    max-width: 600px;
+    position: absolute; /* Positioning the description absolutely */
+    bottom: 70px; /* Align to the bottom */
+    left: 10px; /* Align to the left */
+}
+
+/* Description heading and paragraph styles */
+.description h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Right side (image) */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative; /* Positioning the image container relatively */
+}
+
+/* Profile image styles */
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better aesthetics */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .home-page {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .content {
+        flex-direction: column; /* Stack content vertically */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 50px; /* Adjust top margin */
+    }
+
+    .description {
+        position: relative; /* Change to relative for stacking */
+        max-width: 100%; /* Allow full width */
+        bottom: auto; /* Reset bottom positioning */
+        left: auto; /* Reset left positioning */
+        padding: 20px; /* Maintain padding */
+    }
+
+    .image-container {
+        justify-content: center; /* Center the image */
+        margin-top: 20px; /* Add space above the image */
+    }
+
+    .profile-image {
+        width: 200px; /* Adjust image size */
+        height: 200px; /* Adjust image size */
+    }
+
+    .description h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .description p {
+        font-size: 16px; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .description h1 {
+        font-size: 24px; /* Further adjust heading size */
+    }
+
+    .description p {
+        font-size: 14px; /* Further adjust paragraph size */
+    }
+
+    .profile-image {
+        width: 150px; /* Further adjust image size */
+        height: 150px; /* Further adjust image size */
+    }
+}
