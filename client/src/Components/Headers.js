@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Headers.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import logoImage from "./Images/Black and White Modern Streetwear Logo.png";
 
 const Headers = () => {
     const [userdata, setUserdata] = useState(null); // Store user data
     const navigate = useNavigate();
+    const auth = getAuth();
 
-    // Function to fetch user data
-    const getUser = async () => {
-        try {
-            const response = await axios.get("http://localhost:6005/login/sucess", { withCredentials: true });
-            setUserdata(response.data.user); // Store user details if login is successful
-        } catch (error) {
-            console.error("Error fetching user data:", error);
-            setUserdata(null); // Reset user data if error occurs
-        }
-    };
+    // Listen for authentication state changes
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUserdata({
+                    displayName: user.displayName || user.email, // Use displayName if available, otherwise email
+                    photoURL: user.photoURL, // User profile picture
+                });
+            } else {
+                setUserdata(null); // Clear user data when user logs out
+            }
+        });
+
+        return () => unsubscribe(); // Cleanup the listener on component unmount
+    }, [auth]);
 
     // Logout function
-    const logout = () => {
-        setUserdata(null); // Clear user data
-        navigate("/"); // Redirect to home page
+    const logout = async () => {
+        try {
+            await signOut(auth);
+            setUserdata(null); // Clear user data
+            navigate("/"); // Redirect to the home page
+        } catch (error) {
+            console.error("Error during logout:", error.message);
+        }
     };
-
-    // Fetch user data on component mount
-    useEffect(() => {
-        getUser();
-    }, []);
 
     return (
         <header>
@@ -47,14 +53,18 @@ const Headers = () => {
                                 <li>
                                     <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
-                                <li style={{ color: "black", fontWeight: "bold" }}>{userdata?.displayName}</li>
-                                <li>
-                                    <img
-                                        src={userdata?.image}
-                                        style={{ width: "60px", height: "60px", borderRadius: "50%" }}
-                                        alt="User"
-                                    />
+                                <li style={{ color: "black", fontWeight: "bold" }}>
+                                    {userdata.displayName}
                                 </li>
+                                {userdata.photoURL && (
+                                    <li>
+                                        <img
+                                            src={userdata.photoURL}
+                                            style={{ width: "60px", height: "60px", borderRadius: "50%" }}
+                                            alt="User Avatar"
+                                        />
+                                    </li>
+                                )}
                                 <li
                                     onClick={logout}
                                     style={{ cursor: "pointer", color: "red", fontWeight: "bold" }}

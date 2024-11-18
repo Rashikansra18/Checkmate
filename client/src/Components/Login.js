@@ -54,6 +54,8 @@ import "./styles/Login.css";
 import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 import "./PlagiarismChecker";
+import "./Dashboard";
+import "./Headers";
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -119,7 +121,7 @@ const Login = () => {
     const handleGoogleLogin = async () => {
         try {
             await signInWithPopup(auth, googleProvider);
-            navigate("/PlagiarismChecker"); // Redirect to PlagiarismChecker
+            navigate("/Dashboard"); // Redirect to PlagiarismChecker
         } catch (err) {
             setError(err.message);
         }
