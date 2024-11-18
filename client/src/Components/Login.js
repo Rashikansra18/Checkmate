@@ -55,7 +55,6 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 import "./PlagiarismChecker";
 import "./Dashboard";
-import "./Headers";
 import {
     getAuth,
     signInWithEmailAndPassword,

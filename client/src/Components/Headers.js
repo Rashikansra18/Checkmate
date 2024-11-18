@@ -53,7 +53,7 @@ const Headers = () => {
                                 <li>
                                     <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
-                                <li style={{ color: "black", fontWeight: "bold" }}>
+                                <li style={{ color: "White", fontWeight: "bold" }}>
                                     {userdata.displayName}
                                 </li>
                                 {userdata.photoURL && (
