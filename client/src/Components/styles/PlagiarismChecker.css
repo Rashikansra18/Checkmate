@@ -32,8 +32,7 @@ textarea {
     width: 50%;
     height: 150px;
     padding: 15px;
-    margin-top: 50px;
-    margin-left: 350px;
+    margin: 20px auto; /* Center the textarea horizontally */
     border: 2px solid #007bff;
     border-radius: 8px;
     resize: none;
@@ -41,8 +40,7 @@ textarea {
     color: #333;
     background-color: #f1f1f1;
     transition: border-color 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
+    display: block; /* Ensure it acts as a block-level element */
 }
 
 textarea:focus {
@@ -51,18 +49,25 @@ textarea:focus {
     outline: none;
 }
 
+.word-count {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: center; /* Center the word count text */
+}
 /* Button Styling */
+
 button {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 12px 20px;
-    margin-top: 50px;
+    margin: 20px auto; /* Center the button horizontally */
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
-    display: inline-block;
+    display: block; /* Center button like block element */
 }
 
 button:disabled {

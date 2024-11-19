@@ -34,12 +34,13 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .form-container {
   position: relative;
-  bottom: 50px;
+  /* top: 10px; */
+  bottom: 0px;
   background: rgba(255, 255, 255, 0.1);
   max-width: 360px;
   width: 100%;

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\asus\OneDrive\Desktop\Plagiarism Checker\server\venv
+set VIRTUAL_ENV=C:\Users\rashi\OneDrive\Desktop\project\plagiarism-detector\server\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

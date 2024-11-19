@@ -133,7 +133,7 @@ const PlagiarismChecker = () => {
                 placeholder="Enter text to check for plagiarism"
                 disabled={loading}
             />
-            <div>
+            <div className='word-count' >
                 Word Count: {wordCount} / 150
             </div>
             {alertMessage && (
